@@ -9,12 +9,12 @@ terraform {
 
     azuread = {
       source  = "hashicorp/azuread"
-      version = "2.49.0"
+      version = "2.49.1"
     }
 
     azuredevops = {
       source  = "microsoft/azuredevops"
-      version = "1.0.1"
+      version = "1.1.0"
     }
     azurerm = {
       source  = "hashicorp/azurerm"
