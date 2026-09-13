@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "addLabels": ["renovate", "bot", "dependencies"],
   "commitBodyTable": true,
-  "extends": ["config:recommended", ":disableDependencyDashboard"],
+  "extends": ["config:recommended", ":enableVulnerabilityAlerts", "helpers:pinGitHubActionDigests"],
   "gitAuthor": "Renovate <renovate@rolfmoleman.com>",
   "packageRules": [
     {
@@ -23,14 +23,35 @@
       "automergeType": "pr"
     },
     {
-      "description": "Automatically merge major versions",
+      "description": "Require review for major versions",
       "matchUpdateTypes": ["major"],
-      "automerge": true,
+      "automerge": false,
       "automergeType": "pr"
+    },
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Group Terraform provider updates",
+      "matchManagers": ["terraform"],
+      "groupName": "Terraform providers",
+      "automerge": false
     },
     {
       "description": "Add package names to this array to exclude them from Renovate updates",
       "excludePackageNames": []
     }
-  ]
+  ],
+  "prConcurrentLimit": 3,
+  "prHourlyLimit": 1,
+  "schedule": ["before 7am on monday"],
+  "dependencyDashboard": true,
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "prConcurrentLimit": 1,
+    "labels": ["security", "renovate"],
+    "automerge": false
+  }
 }
