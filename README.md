@@ -1,8 +1,6 @@
 # Down At The Bottom Of The Mole HoleTerraform module template
 
-![Down At The Bottom Of The Mole Hole banner](./.assets/org-banner.png)
-
-[![terraform_module_template][logo-image]](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template)
+[![Down At The Bottom Of The Mole Hole banner](https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/.github/main/assets/banners/repositories/terraform-module-template.png)](https://github.com/DownAtTheBottomOfTheMoleHole)
 
 <!-- Github Badges -->
 <!--
